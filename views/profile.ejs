@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/nav') %>
+    <div>
+        <% users.forEach(user => { %>
+            <p><a href=user/<%= user._id %>><%= user.name %></a></p>
+        <% }); %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/nav') %>
+    <div>
+        <table style="border: 1px solid black;width: 100%;border-collapse: collapse;">
+            <tbody>
+                <tr style="background-color: blanchedalmond;">
+                    <td>Name</td>
+                    <td>Username</td>
+                    <td>DOB</td>
+                    <td>Department</td>
+                    <td>Salary</td>
+                </tr>
+                <tr style="background-color: aliceblue;">
+                    <td><%= data.user.name %></td>
+                    <td><%= data.user.userName %></td>
+                    <td><%= data.user.dob %></td>
+                    <td><%= data.profile.dept %></td>
+                    <td><%= data.profile.salary %></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

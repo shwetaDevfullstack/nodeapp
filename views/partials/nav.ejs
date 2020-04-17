@@ -1,0 +1,7 @@
+<div style="background-color: black; padding: 18px;">
+    <a style="padding: 0px;" href="/">Home</a>
+    <a style="padding: 9px;" href="/profile">Profile</a>
+    <% if(typeof user !== 'undefined' || typeof userId !== 'undefined') { %>
+        <a class="float-right" href="/logout">Logout</a>
+    <% } %>
+</div>
