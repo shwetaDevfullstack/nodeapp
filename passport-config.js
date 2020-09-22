@@ -12,7 +12,6 @@ module.exports = (passport) => {
     passport.use(new Startegy((username, password, done) => {
         try{
             User.find({'userName': username}, (err, user) => {
-                console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$');
                 if(err || _.isEmpty(user)){
                     return done(null, false, {message: 'No user with that username!'});
                 }else{
@@ -38,9 +37,7 @@ module.exports = (passport) => {
     // serializing, and querying the user record by ID from the database when
     // deserializing.
     passport.serializeUser((user, done) => {
-        console.log('******************************');
         console.log(user[0]);
-        console.log('******************************');
         done(null, user[0]._id);
     });
 
