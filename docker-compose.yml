@@ -1,0 +1,16 @@
+version: "2"
+services: 
+    web:
+        build: .
+        ports: 
+            - "8082:8082"
+        links: 
+            - mongo
+        depends_on:
+            - mongo
+    mongo:
+        image: mongo:latest
+        volumes: 
+            - /Users/varunshweta/mongo:/data/db
+        ports: 
+            - "27017:27017"

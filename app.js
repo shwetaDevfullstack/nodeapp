@@ -7,7 +7,7 @@ const flash = require('express-flash');
 const session = require('express-session');
 
 //connect to db
-mongoose.connect('mongodb://localhost/nodeapp', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://mongo:27017/nodeapp', {useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection;
 
 //check connection
@@ -26,6 +26,16 @@ require('./passport-config')(passport);
 //Intialized express framework
 const app = express();
 
+//Logging middleware
+let logMiddleware = (req, res, next) => {
+    console.log('******************')
+    console.log(req.headers)
+    console.log(res.body)
+    next()
+}
+
+//use logging middelware
+app.use(logMiddleware)
 //set view engine
 app.set('view engine', 'ejs');
 // Use application-level middleware
